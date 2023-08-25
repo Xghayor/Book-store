@@ -14,8 +14,8 @@ const App = () => {
         </>
       ),
       children: [
-        { path: '/', element: <div>Hello world!</div> },
-        { path: '/books', element: <BookList /> },
+        { path: '/', element: <BookList /> },
+        { path: '/Categories', element: <h1>I will be developed soon!</h1> },
       ],
     },
   ]);
