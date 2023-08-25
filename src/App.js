@@ -1,21 +1,26 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider, Routes, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import BookList from './components/BookList';
 
 const App = () => {
   const router = createBrowserRouter([
     {
-        path: "/",
-        element: <div>Hello world!</div>,
-      },
-      {
-        path: "/books",
-        element: <div>Hello Books!</div>,
-      },
+      path: '/',
+      element: (
+        <>
+          <Navbar />
+          <Outlet />
+        </>
+      ),
+      children: [
+        { path: '/', element: <div>Hello world!</div> },
+        { path: '/books', element: <BookList /> },
+      ],
+    },
   ]);
 
-  return (
-    <RouterProvider router={router} />
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
