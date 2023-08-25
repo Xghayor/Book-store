@@ -25,12 +25,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Math-magicians <a name="about-project"></a>
+# 📖 BOOKSTORE CMS <a name="about-project"></a>
 
-**"Math magicians"** is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to:
-
--Make simple calculations.
--Read a random math-related quote.
+**"BOOKSTORE CMS"** A comprehensive and user-friendly content management system (CMS) tailored for bookstores.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -43,18 +40,12 @@
 
 ##
 
-<!-- live demo -->
-
-## 🚀 Live Demo <a name="live-demo" target="_blank"></a>
-
-- [Kindly Click Here to open the demo ](https://math-magicians-project-eif6.onrender.com)
-
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-- **Calculator**
-- **Quotes**
+- **Add Books**
+- **Remove Books**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -66,7 +57,7 @@
 
 Clone this repository to your desired folder:
 
-https://github.com/Xghayor/math-magicians
+https://github.com/Xghayor/Book-store
 
 ### Install
 
@@ -81,7 +72,7 @@ To run the project, execute the following command:
 
 > npm install
 
-### Run tests
+### Run ests
 
 > npm start
 
@@ -106,7 +97,10 @@ Project can be deployed by using the gh-pages and other web platforms.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Deployment**
+- [ ] **Add reducers and actions**
+- [ ] **Use Redux in React components**
+- [ ] **Connect to API**
+- [ ] **Styling**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
