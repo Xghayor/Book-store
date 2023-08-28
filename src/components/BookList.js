@@ -1,23 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import BookForm from './BookForm';
+import { updateBooks } from '../Redux/books/booksSlice';
 
 const BookList = () => {
-  const [books, setBooks] = useState([
-    {
-      id: 1,
-      category: 'Fiction',
-      bookName: 'The Great Gatsby',
-      author: 'F. Scott Fitzgerald',
-    },
-  ]);
+  const books = useSelector((state) => state.books);
+  const dispatch = useDispatch();
 
-  const handleRemoveBook = (id) => {
-    setBooks(books.filter((book) => book.id !== id));
-  };
-
-  const handleAddBook = (newBook) => {
-    setBooks([...books, newBook]);
+  const handleRemoveBook = (bookId) => {
+    dispatch(updateBooks(bookId));
   };
 
   return (
@@ -25,7 +17,7 @@ const BookList = () => {
       <h2>Book List</h2>
       <div>
         <h3>Add New Book</h3>
-        <BookForm onAddBook={handleAddBook} />
+        <BookForm />
       </div>
       {books.map((book) => (
         <Book

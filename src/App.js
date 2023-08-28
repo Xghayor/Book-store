@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import BookList from './components/BookList';
+import Status from './components/Categories';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -15,7 +16,7 @@ const App = () => {
       ),
       children: [
         { path: '/', element: <BookList /> },
-        { path: '/Categories', element: <h1>I will be developed soon!</h1> },
+        { path: '/Categories', element: <Status /> },
       ],
     },
   ]);
