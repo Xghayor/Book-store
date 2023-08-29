@@ -11,8 +11,8 @@ const BookForm = () => {
 
     const newBook = {
       id: uuidv4(),
+      title: e.target.title.value,
       category: e.target.category.value,
-      bookName: e.target.bookName.value,
       author: e.target.author.value,
     };
 
@@ -24,10 +24,10 @@ const BookForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <input type="text" name="category" placeholder="Category" required />
+        <input type="text" name="title" placeholder="Book Name" required />
       </div>
       <div>
-        <input type="text" name="bookName" placeholder="Book Name" required />
+        <input type="text" name="category" placeholder="Category" required />
       </div>
       <div>
         <input type="text" name="author" placeholder="Author" required />
