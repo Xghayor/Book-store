@@ -2,32 +2,33 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import BookForm from './BookForm';
-import { updateBooks } from '../Redux/books/booksSlice';
+import { removed } from '../Redux/books/booksSlice';
+import BookCategory from './BookCategory';
 
 const BookList = () => {
   const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
 
   const handleRemoveBook = (bookId) => {
-    dispatch(updateBooks(bookId));
+    dispatch(removed(bookId));
   };
 
   return (
     <div className="book-list">
       <h2>Book List</h2>
       <div>
-        <h3>Add New Book</h3>
-        <BookForm />
+        <BookCategory />
       </div>
       {books.map((book) => (
         <Book
           key={book.id}
           category={book.category}
-          bookName={book.bookName}
+          bookName={book.title}
           author={book.author}
           onRemove={() => handleRemoveBook(book.id)}
         />
       ))}
+      <BookForm />
     </div>
   );
 };

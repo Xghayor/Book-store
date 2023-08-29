@@ -5,7 +5,7 @@ const Book = ({
   category, bookName, author, onRemove,
 }) => (
   <div className="book">
-    <div className="category">{category}</div>
+    <div className="category"><strong>{category}</strong></div>
     <div className="book-details">
       <div className="book-name">{bookName}</div>
       <div className="author">{author}</div>

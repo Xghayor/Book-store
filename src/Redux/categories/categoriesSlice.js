@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  categories: [],
+  categories: ['All', 'Action', 'Drama', 'Mystery', 'Sci-Fi', 'Fantasy', 'Cinematic'],
   status: 'Under construction',
 };
 
