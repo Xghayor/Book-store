@@ -4,6 +4,9 @@ import Book from './Book';
 import BookForm from './BookForm';
 import { removed } from '../Redux/books/booksSlice';
 import BookCategory from './BookCategory';
+import ChapterCounter from './ChapterCounter';
+
+const getRandomChapter = () => Math.floor(Math.random() * 30) + 1;
 
 const BookList = () => {
   const books = useSelector((state) => state.books);
@@ -19,14 +22,16 @@ const BookList = () => {
       <div>
         <BookCategory />
       </div>
-      {books.map((book) => (
-        <Book
-          key={book.id}
-          category={book.category}
-          bookName={book.title}
-          author={book.author}
-          onRemove={() => handleRemoveBook(book.id)}
-        />
+      {books.map((book, index) => (
+        <div key={book.id}>
+          <Book
+            category={book.category}
+            bookName={book.title}
+            author={book.author}
+            onRemove={() => handleRemoveBook(book.id)}
+          />
+          <ChapterCounter book={index + 30} chapter={getRandomChapter()} />
+        </div>
       ))}
       <BookForm />
     </div>
