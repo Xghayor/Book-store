@@ -23,10 +23,12 @@ const removeBook = createAsyncThunk('books/removeBook', async (bookId) => axios.
 
 const createNewBook = createAsyncThunk(
   'books/createNewBook',
-  async (url, newBook) => {
-    const response = await axios.post(url, newBook);
-    return response.data;
-  },
+  (newBook) => axios
+    .post(url, newBook)
+    .then((response) => response.data)
+    .catch((error) => {
+      throw error;
+    }),
 );
 
 const bookSlice = createSlice({
@@ -65,6 +67,8 @@ const bookSlice = createSlice({
       state.books = [];
       state.error = action.error.message;
     });
+    builder.addCase(removeBook.fulfilled, ((state) => state));
+    builder.addCase(createNewBook.fulfilled, ((state) => state));
   },
 });
 

@@ -10,8 +10,6 @@ const BookForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/IfJm8IrVNYBvy5mLAJXh/books';
-
     const newBook = {
       item_id: uuidv4(),
       title: e.target.title.value,
@@ -19,7 +17,7 @@ const BookForm = () => {
       author: e.target.author.value,
     };
 
-    await dispatch(createNewBook(url, newBook));
+    await dispatch(createNewBook(newBook));
     dispatch(getBooks());
   };
 
