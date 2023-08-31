@@ -1,0 +1,37 @@
+/* BookForm container */
+.book-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  /* Form input fields */
+  .book-form div {
+    margin-bottom: 1rem;
+  }
+  
+  .book-form input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  /* Submit button */
+  .book-form button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .book-form button:hover {
+    background-color: #2980b9;
+  }
+  

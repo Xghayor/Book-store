@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import axios from 'axios';
 import Book from './Book';
 import BookForm from './BookForm';
-import { getBooks } from '../Redux/books/booksSlice';
+import { getBooks, removeBook } from '../Redux/books/booksSlice';
 import BookCategory from './BookCategory';
 import ChapterCounter from './ChapterCounter';
 
@@ -16,17 +15,9 @@ const BookList = () => {
     dispatch(getBooks());
   }, [dispatch]);
 
-  const handleRemoveBook = (key) => {
-    const url = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/IfJm8IrVNYBvy5mLAJXh/books/${key}`;
-
-    axios.delete(url)
-      .then((response) => {
-        console.log('Response:', response.data);
-        dispatch(getBooks());
-      })
-      .catch((error) => {
-        console.error('Failed to delete book:', error);
-      });
+  const handleRemoveBook = async (key) => {
+    await dispatch(removeBook(key));
+    dispatch(getBooks());
   };
 
   if (loading) {
@@ -56,8 +47,9 @@ const BookList = () => {
               bookName={book.title}
               author={book.author}
               onRemove={() => handleRemoveBook(key)}
+              component={<ChapterCounter book={index + 30} chapter={getRandomChapter()} />}
             />
-            <ChapterCounter book={index + 30} chapter={getRandomChapter()} />
+
           </div>
         ))
       ))}

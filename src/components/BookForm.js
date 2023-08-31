@@ -1,12 +1,13 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { getBooks } from '../Redux/books/booksSlice';
+import { getBooks, createNewBook } from '../Redux/books/booksSlice';
+import './styles/BookForm.css';
 
 const BookForm = () => {
   const dispatch = useDispatch();
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/IfJm8IrVNYBvy5mLAJXh/books';
@@ -18,18 +19,12 @@ const BookForm = () => {
       author: e.target.author.value,
     };
 
-    axios.post(url, newBook)
-      .then((response) => {
-        console.log('Response:', response.data);
-        dispatch(getBooks());
-      })
-      .catch((error) => {
-        console.error('Failed to create a new book:', error);
-      });
+    await dispatch(createNewBook(url, newBook));
+    dispatch(getBooks());
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="book-form" onSubmit={handleSubmit}>
       <div>
         <input type="text" name="title" placeholder="Book Name" required />
       </div>
