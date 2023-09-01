@@ -18,6 +18,7 @@ const Book = ({
       <div className="component-container">{component}</div>
     </div>
   </div>
+
 );
 
 Book.propTypes = {

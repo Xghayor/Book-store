@@ -22,23 +22,26 @@ const BookForm = () => {
   };
 
   return (
-    <form className="book-form" onSubmit={handleSubmit}>
-      <div className="form-row">
-        <input type="text" name="title" placeholder="Book Name" required />
-        <div className="form-category">
-          <select className="form-select" name="category" required>
-            <option value="">Select Category</option>
-            <option value="Action">Action</option>
-            <option value="Fiction">Fiction</option>
-            <option value="Non-Fiction">Non-Fiction</option>
-            <option value="Horror">Horror</option>
-            <option value="Fantasy">Fantasy</option>
-          </select>
+    <div>
+      <h3 className="add-book">ADD NEW BOOK</h3>
+      <form className="book-form" onSubmit={handleSubmit}>
+        <div className="form-row">
+          <input type="text" name="title" placeholder="Book Name" required />
+          <div className="form-category">
+            <select className="form-select" name="category" required>
+              <option value="">Select Category</option>
+              <option value="Action">Action</option>
+              <option value="Fiction">Fiction</option>
+              <option value="Non-Fiction">Non-Fiction</option>
+              <option value="Horror">Horror</option>
+              <option value="Fantasy">Fantasy</option>
+            </select>
+          </div>
+          <input type="text" name="author" placeholder="Author" required />
+          <button type="submit">Add Book</button>
         </div>
-        <input type="text" name="author" placeholder="Author" required />
-        <button type="submit">Add Book</button>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 

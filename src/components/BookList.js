@@ -65,6 +65,7 @@ const BookList = () => {
           ))
         ))}
       </div>
+      <hr />
       <BookForm />
     </div>
   );

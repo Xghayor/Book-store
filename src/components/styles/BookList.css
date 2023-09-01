@@ -1,3 +1,9 @@
+hr {
+  margin: 2% auto;
+  width: 86vw;
+  border-color: rgb(212, 221, 212, 0.4);
+}
+
 .book-grid {
   display: flex;
   flex-wrap: wrap;
