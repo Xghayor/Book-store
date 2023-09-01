@@ -97,10 +97,8 @@ Project can be deployed by using the gh-pages and other web platforms.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add reducers and actions**
-- [ ] **Use Redux in React components**
-- [ ] **Connect to API**
-- [ ] **Styling**
+- [ ] **Deployment**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

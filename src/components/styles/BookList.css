@@ -13,6 +13,7 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   background-color: #fff;
   transition: box-shadow 0.3s ease;
+  border-radius: 10px;
 }
 
 .book-container {
