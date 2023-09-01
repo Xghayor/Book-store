@@ -13,19 +13,22 @@
   flex-wrap: wrap;
 }
 
-input[type="text"], .form-select, button {
+input[type="text"],
+.form-select,
+button {
   padding: 12px;
   border: none;
   border-radius: 5px;
   flex: 1;
 }
 
-input[type="text"], .form-select {
+input[type="text"],
+.form-select {
   min-width: 350px;
 }
 
 .form-select {
-  background-color: #ffffff;
+  background-color: #fff;
   cursor: pointer;
   transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }

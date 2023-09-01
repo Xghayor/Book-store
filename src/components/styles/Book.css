@@ -1,60 +1,58 @@
 @import '~typeface-playfair-display';
 
 .book {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    flex-wrap: wrap;
-    margin-right: 20px;
-  }
-  
-  .category {
-    color: rgb(142, 140, 140);
-    padding-left: 35px;
-    margin-bottom: 5px;
-  }
-  
-  .book-details {
-    font-size: 1.5rem;
-    font-weight: 800;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .book-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: black;
-    margin-bottom: 5px;
-    padding-left: 35px;
-  }
-  
-  .author {
-    color: rgb(87, 204, 244,0.9);
-    margin-bottom: 2px;
-    font: 1.5rem;
-    padding-left: 35px;
-  }
-  
-  .remove-button-container {
-    align-self: flex-start;
-    padding-left: 35px;
-  }
-  
-  .remove-button {
-    color: rgb(87, 204, 244,0.9);
-    border: none;
-    background-color: white;
-    cursor: pointer;
-    padding: 5px 0;
-  }
-  
-  .remove-button:hover {
-    color: blue;
-  }
-  
-  .component-container {
-    margin-top: 10px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  flex-wrap: wrap;
+  margin-right: 20px;
+}
+
+.category {
+  color: rgb(142, 140, 140);
+  padding-left: 35px;
+  margin-bottom: 5px;
+}
+
+.book-details {
+  font-size: 1.5rem;
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: black;
+  margin-bottom: 5px;
+  padding-left: 35px;
+}
+
+.author {
+  color: rgb(87, 204, 244, 0.9);
+  margin-bottom: 2px;
+  padding-left: 35px;
+}
+
+.remove-button-container {
+  align-self: flex-start;
+  padding-left: 35px;
+}
+
+.remove-button {
+  color: rgb(87, 204, 244, 0.9);
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+.remove-button:hover {
+  color: blue;
+}
+
+.component-container {
+  margin-top: 10px;
+}
