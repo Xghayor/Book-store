@@ -1,36 +1,49 @@
-/* BookForm container */
 .book-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-/* Form input fields */
-.book-form div {
-  margin-bottom: 1rem;
-}
-
-.book-form input {
   width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-/* Submit button */
-.book-form button {
-  background-color: #3498db;
-  color: white;
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+input[type="text"], .form-select, button {
+  padding: 12px;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  flex: 1;
 }
 
-.book-form button:hover {
-  background-color: #2980b9;
+input[type="text"], .form-select {
+  min-width: 350px;
+}
+
+.form-select {
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.form-select:focus {
+  outline: none;
+  background-color: #fff;
+}
+
+.book-form button {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  min-width: 200px;
+  transition: background-color 0.3s ease-in-out;
+  margin-right: 40px;
+}
+
+button:hover {
+  background-color: #0056b3;
 }

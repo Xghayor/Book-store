@@ -23,16 +23,21 @@ const BookForm = () => {
 
   return (
     <form className="book-form" onSubmit={handleSubmit}>
-      <div>
+      <div className="form-row">
         <input type="text" name="title" placeholder="Book Name" required />
-      </div>
-      <div>
-        <input type="text" name="category" placeholder="Category" required />
-      </div>
-      <div>
+        <div className="form-category">
+          <select className="form-select" name="category" required>
+            <option value="">Select Category</option>
+            <option value="Action">Action</option>
+            <option value="Fiction">Fiction</option>
+            <option value="Non-Fiction">Non-Fiction</option>
+            <option value="Horror">Horror</option>
+            <option value="Fantasy">Fantasy</option>
+          </select>
+        </div>
         <input type="text" name="author" placeholder="Author" required />
+        <button type="submit">Add Book</button>
       </div>
-      <button type="submit">Add Book</button>
     </form>
   );
 };
