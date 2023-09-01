@@ -11,10 +11,10 @@
 
 /* Logo */
 .logo {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 900;
   color: #0290ff;
-  margin-left: 80px;
+  margin-left: 6vw;
 }
 
 /* Navigation links */
@@ -53,5 +53,11 @@
   border: 1px solid rgb(233, 226, 226);
   border-radius: 50%;
   padding: 2px;
-  margin-left: 48vw;
+  margin-left: 56vw;
+}
+
+@media (max-width: 1350px) {
+  .user-icon {
+    margin-left: 30vw;
+  }
 }
