@@ -1,38 +1,77 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { v4 as uuidv4 } from 'uuid';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-const initialState = [
-  {
-    id: uuidv4(),
-    title: 'The Great Gatsby',
-    author: 'John Smith',
-    category: 'Action',
-  },
-  {
-    id: uuidv4(),
-    title: 'Anna Karenina',
-    author: 'Leo Tolstoy',
-    category: 'Action',
-  },
-  {
-    id: uuidv4(),
-    title: 'The Selfish Gene',
-    author: 'Richard Dawkins',
-    category: 'Cinematic',
-  },
-];
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/IfJm8IrVNYBvy5mLAJXh/books';
+
+const initialState = {
+  loading: false,
+  books: [],
+  error: '',
+};
+
+const getBooks = createAsyncThunk('books/fetchBooks', async () => axios.get(url)
+  .then((response) => response.data)
+  .catch((error) => {
+    throw error;
+  }));
+
+const removeBook = createAsyncThunk('books/removeBook', async (bookId) => axios.delete(`${url}/${bookId}`)
+  .then((response) => response.data)
+  .catch((error) => {
+    throw error;
+  }));
+
+const createNewBook = createAsyncThunk(
+  'books/createNewBook',
+  (newBook) => axios
+    .post(url, newBook)
+    .then((response) => response.data)
+    .catch((error) => {
+      throw error;
+    }),
+);
 
 const bookSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
-    added: (state, action) => [...state, action.payload],
-    removed: (state, action) => state.filter((book) => book.id !== action.payload),
-    updateBooks: (state, action) => (action.payload === 'All'
-      ? initialState
-      : initialState.filter((book) => book.category === action.payload)),
+    updateBooks: (state, action) => {
+      const { books } = state;
+
+      if (action.payload === 'All') {
+        return { ...state };
+      }
+
+      const filtered = {};
+
+      Object.keys(books).forEach((key) => {
+        filtered[key] = books[key].filter((book) => book.category === action.payload);
+      });
+
+      return {
+        books: filtered,
+      };
+    },
+
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getBooks.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(getBooks.fulfilled, (state, action) => {
+      state.loading = false;
+      state.books = action.payload;
+    });
+    builder.addCase(getBooks.rejected, (state, action) => {
+      state.loading = false;
+      state.books = [];
+      state.error = action.error.message;
+    });
+    builder.addCase(removeBook.fulfilled, ((state) => state));
+    builder.addCase(createNewBook.fulfilled, ((state) => state));
   },
 });
 
 export default bookSlice.reducer;
 export const { added, removed, updateBooks } = bookSlice.actions;
+export { getBooks, removeBook, createNewBook };

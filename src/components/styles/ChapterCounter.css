@@ -1,0 +1,57 @@
+/* ChapterCounter.css */
+
+.counter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.percent-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.progress-ring {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: conic-gradient(#3498db 0%, #f9f9f9 0% 100%);
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.spinner {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 4px solid transparent;
+  border-top-color: #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.chapter-box {
+  width: 50%;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}

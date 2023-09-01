@@ -1,28 +1,28 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { added } from '../Redux/books/booksSlice';
+import { getBooks, createNewBook } from '../Redux/books/booksSlice';
+import './styles/BookForm.css';
 
 const BookForm = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newBook = {
-      id: uuidv4(),
+      item_id: uuidv4(),
       title: e.target.title.value,
       category: e.target.category.value,
       author: e.target.author.value,
     };
 
-    dispatch(added(newBook));
-
-    e.target.reset();
+    await dispatch(createNewBook(newBook));
+    dispatch(getBooks());
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="book-form" onSubmit={handleSubmit}>
       <div>
         <input type="text" name="title" placeholder="Book Name" required />
       </div>

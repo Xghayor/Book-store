@@ -1,0 +1,18 @@
+/* BookCategory container */
+.book-category {
+  margin-bottom: 1rem;
+}
+
+/* Select dropdown */
+.book-category select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Option */
+.book-category option {
+  font-size: 1rem;
+}
