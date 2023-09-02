@@ -6,16 +6,19 @@ const Book = ({
   category, bookName, author, onRemove, component,
 }) => (
   <div className="book">
-    <div className="category"><strong>{category}</strong></div>
+    <div className="category">{category}</div>
     <div className="book-details">
       <div className="book-name">{bookName}</div>
       <div className="author">{author}</div>
-      <div>{component}</div>
+      <div className="remove-button-container">
+        <button type="button" className="remove-button" onClick={onRemove}>
+          Remove
+        </button>
+      </div>
+      <div className="component-container">{component}</div>
     </div>
-    <button type="button" className="remove-button" onClick={onRemove}>
-      Remove
-    </button>
   </div>
+
 );
 
 Book.propTypes = {

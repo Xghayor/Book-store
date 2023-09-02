@@ -14,7 +14,7 @@ const BookCategory = () => {
 
   return (
     <div className="book-category">
-      <select onChange={filterBooks}>
+      <select className="category-select" onChange={filterBooks}>
         {categories.map((category) => (
           <option key={category} value={category}>
             {category}

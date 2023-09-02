@@ -55,16 +55,11 @@
 
 ### Setup
 
-Clone this repository to your desired folder:
+## Installation
 
-https://github.com/Xghayor/Book-store
+To clone the project, use the following command:
 
-### Install
-
-<ul>
-   <li>npx create-react-app . </li>
-   <li>npm start</li>
-</ul>
+git clone git@github.com:Xghayor/Book-store.git
 
 ### Usage
 
@@ -76,9 +71,6 @@ To run the project, execute the following command:
 
 > npm start
 
-### Deployment
-
-Project can be deployed by using the gh-pages and other web platforms.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -97,10 +89,8 @@ Project can be deployed by using the gh-pages and other web platforms.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add reducers and actions**
-- [ ] **Use Redux in React components**
-- [ ] **Connect to API**
-- [ ] **Styling**
+- [ ] **Deployment**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

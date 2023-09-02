@@ -1,18 +1,37 @@
-/* BookCategory container */
 .book-category {
-  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 100px;
+  padding: 5px;
 }
 
-/* Select dropdown */
-.book-category select {
-  padding: 0.5rem 1rem;
+.category-select {
+  padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f9f9f9;
   cursor: pointer;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-/* Option */
-.book-category option {
-  font-size: 1rem;
+.category-select:focus {
+  outline: none;
+  border-color: #007bff;
+  background-color: #fff;
+}
+
+.category-select::after {
+  content: '\25BE';
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.category-select option:hover {
+  background-color: #007bff;
+  color: #fff;
 }
