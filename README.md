@@ -1,4 +1,4 @@
-# Math-Magicians
+# BOOKSTORE-CMS
 <a name="readme-top"></a>
 
 <!-- TABLE OF CONTENTS -->
@@ -48,6 +48,10 @@
 - **Remove Books**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Live Demo <a name="live-demo"></a>
+
+- [Visit our website](https://xghayor.github.io/Book-store/)
 
 <!-- GETTING STARTED -->
 
