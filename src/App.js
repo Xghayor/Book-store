@@ -19,7 +19,9 @@ const App = () => {
         { path: '/Categories', element: <Status /> },
       ],
     },
-  ]);
+  ], {
+    basename: '/Book-store',
+  });
 
   return <RouterProvider router={router} />;
 };
